@@ -27,6 +27,13 @@
     });
   });
 
+  document.querySelectorAll('button.hs[data-goto]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      stopAll();
+      window.location.href = btn.dataset.goto;
+    });
+  });
+
   // debug overlay: ?debug=1 or press d
   function setDebug(on) {
     document.body.classList.toggle('debug', on);
